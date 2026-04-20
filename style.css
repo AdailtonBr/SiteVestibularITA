@@ -1,0 +1,355 @@
+
+/* Cores Oficiais: Azul #004A99 | Amarelo #F9D71C | Vermelho #ED1C24 */
+
+:root {
+    --azul-ita: #004A99;
+    --amarelo-ita: #F9D71C;
+    --fundo-claro: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: var(--fundo-claro);
+    color: #333;
+}
+
+/* Navegação */
+nav {
+    width: 100%;
+    background-color: var(--azul-ita);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 4px solid var(--amarelo-ita);
+}
+
+.cabecalho {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: Arial, sans-serif; /* Fonte sem serifa para menus fica mais legível */
+    transition: color 0.3s;
+}
+
+.cabecalho li a:hover {
+    color: var(--amarelo-ita);
+}
+
+/* Área da Imagem de Fundo (Hero) */
+.div-imagem-ita {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-color: #000; /* Fundo escuro atrás da imagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#biblioteca {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6; /* Escurece a imagem para o texto sobressair */
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+.texto-sobreposto {
+    position: relative;
+    z-index: 10;
+    color: white;
+    font-size: 8vh;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* Área da Logo */
+.div-imagem-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: -80px; /* Puxa a logo para cima da imagem anterior */
+    position: relative;
+    z-index: 20;
+}
+
+#logo {
+    width: 180px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 3px solid var(--amarelo-ita);
+}
+
+/* Conteúdo Principal */
+main {
+    padding: 40px 10%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.titulo-secao{
+    text-align: center;
+    color: #004A99; /* Azul ITA */
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.seccao-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 40px;
+    row-gap:80px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: white;
+    width:80%;
+    height: 50vh;
+    border-top: 4px solid #004A99;
+    
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-top-color: #F9D71C;
+}
+
+.card h3 {
+    padding-top: 5vh;
+    text-align: center;
+    color: var(--azul-ita);
+}
+
+.card p {
+    align-self: center;
+    line-height: 1.6;
+    color: black;
+    width:80%;
+    margin:auto;
+}
+
+/* --- ESTILOS DO CARROSSEL --- */
+.calendario-section {
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.calendario-section h2 {
+    color: #004A99; /* Azul ITA */
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.carrossel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+/* Botões de navegação */
+.btn-carrossel {
+    background-color: #ED1C24; /* Vermelho ITA */
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background 0.3s, transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-carrossel:hover { background-color: #c9161e; transform: scale(1.1); }
+.btn-prev { left: -20px; }
+.btn-next { right: -20px; }
+
+/* A "pista" onde os itens rolam */
+.carrossel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory; /* Faz o cartão "encaixar" na tela */
+    
+    /* Oculta a barra de rolagem nativa para ficar mais bonito */
+    -ms-overflow-style: none;  /* IE e Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.carrossel-track::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+}
+
+/* Os cartões de data */
+.card-data {
+    min-width: 260px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    scroll-snap-align: center; /* Ponto de encaixe do cartão */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-top: 5px solid #F9D71C; /* Amarelo ITA */
+    transition: transform 0.3s;
+}
+
+.card-data:hover {
+    transform: translateY(-5px);
+}
+
+/* Cabeçalho do Cartão (Azul com a Data) */
+.card-header {
+    background-color: #004A99;
+    color: white;
+    padding: 20px;
+}
+
+.card-header .dia {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #F9D71C;
+    line-height: 1;
+}
+
+.card-header .mes {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* Corpo do Cartão */
+.card-body {
+    padding: 20px;
+}
+
+.card-body h4 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.card-body p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.seccao-inscricao {
+    padding: 60px 5%;
+}
+
+.container-inscricao {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-left: 8px solid #004A99; 
+}
+
+.info-preparacao h2 {
+    color: #004A99;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.info-preparacao p {
+    color: #475569;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.acao-inscricao {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.caixa-alerta {
+    background-color: #fff7ed;
+    border: 1px dashed #f97316; 
+    padding: 15px;
+    border-radius: 8px;
+    color: #9a3412;
+    font-size: 0.9rem;
+}
+
+.btn-principal {
+    background-color: #ED1C24; 
+    color: white;
+    text-decoration: none;
+    padding: 20px 30px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(237, 28, 36, 0.3);
+}
+
+.btn-principal:hover {
+    background-color: #c9161e;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(237, 28, 36, 0.5);
+}
+
+.link-secundario {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.link-secundario a {
+    color: #004A99;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--azul-ita);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
