@@ -169,5 +169,18 @@
             </div>
         </section>
     </main>
+    <footer>
+        <p>&copy; 2027 Vestibular ITA. Projetado para o futuro.</p>
+    </footer>
+    <script>
+        function moverCarrossel(direcao) {
+            const track = document.getElementById('track-calendario');
+            const tamanhoCartao = 260 + 20; 
+            track.scrollBy({
+                left: direcao * tamanhoCartao,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
