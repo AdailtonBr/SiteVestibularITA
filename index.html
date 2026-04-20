@@ -26,5 +26,148 @@
             <img id="logo" src="/assets/logo.png" alt="Logo do ITA">
         </div>
     </header>
+       <main>
+        <h2 class="titulo-secao">Cursos oferecidos</h2>
+        <section class="seccao-info">
+           <div class="card">
+                <h3>Engenheria Aeronáutica</h3>
+                <p>Foco no projeto, construção e manutenção de aeronaves, abordando aerodinâmica, estruturas e sistemas aeroespaciais.</p>
+           </div>
+           <div class="card">
+                <h3>Engenheria Aeroespacial</h3>
+                <p>Desenvolvimento de sistemas espaciais, satélites e veículos lançadores, explorando as fronteiras da tecnologia além da atmosfera terrestre.</p>
+           </div>
+           <div class="card">
+                <h3>Engenheria da Computação</h3>
+                <p>Integração de software e hardware para criar sistemas complexos, inteligência artificial e soluções de processamento de dados para o setor aeroespacial.</p>
+           </div>
+           <div class="card">
+                <h3>Engenheria de Sistemas</h3>
+                <p>Abordagem multidisciplinar para projetar e gerenciar sistemas tecnológicos complexos, unindo engenharia avançada à gestão de ciclo de vida.</p>
+           </div>
+           <div class="card">
+                <h3>Engenheria de Energia</h3>
+                <p>Estudo de conversão, armazenamento e gestão de energia, com foco em eficiência energética e fontes renováveis para aplicações civis e militares.</p>
+           </div>
+           <div class="card">
+                <h3>Engenheria Civil Aeronáutica</h3>
+                <p>Especializada em infraestrutura para a aviação, como o projeto e construção de aeroportos, pistas e bases aéreas de alta resistência.</p>
+           </div>
+           <div class="card">
+                <h3>Engenheria Mecânica Aeronáutica</h3>
+                <p>Foco em sistemas mecânicos, propulsão, novos materiais e processos de fabricação avançados para a indústria aeronáutica e de defesa.</p>
+           </div>
+           <div class="card">
+                <h3>Engenheria Eletrônica</h3>
+                <p>Desenvolvimento de sistemas de controle, comunicações, sensores e aviónica essenciais para o funcionamento inteligente de aeronaves e satélites.</p>
+           </div>
+        </section>
+        <section class="calendario-section">
+        <h2>Calendário do Processo Seletivo</h2>
+        
+        <div class="carrossel-container">
+            <button class="btn-carrossel btn-prev" onclick="moverCarrossel(-1)">&#10094;</button>
+            
+            <div class="carrossel-track" id="track-calendario">
+                
+                <div class="card-data">
+                    <div class="card-header">
+                        <div class="dia">01-15</div>
+                        <div class="mes">Jun / Jul</div>
+                    </div>
+                    <div class="card-body">
+                        <h4>Período de Inscrições</h4>
+                        <p>Realize a sua inscrição online e garanta a sua vaga no vestibular mais concorrido do país.</p>
+                    </div>
+                </div>
+
+                <div class="card-data">
+                    <div class="card-header">
+                        <div class="dia">05</div>
+                        <div class="mes">Setembro</div>
+                    </div>
+                    <div class="card-body">
+                        <h4>Prova da 1ª Fase</h4>
+                        <p>Prova objetiva de Física, Português, Inglês, Matemática e Química.</p>
+                    </div>
+                </div>
+
+                <div class="card-data">
+                    <div class="card-header">
+                        <div class="dia">20</div>
+                        <div class="mes">Setembro</div>
+                    </div>
+                    <div class="card-body">
+                        <h4>Resultados da 1ª Fase</h4>
+                        <p>Divulgação da lista de classificados para as provas dissertativas.</p>
+                    </div>
+                </div>
+
+                <div class="card-data" style="border-top-color: #ED1C24;"> <div class="card-header">
+                        <div class="dia">26-29</div>
+                        <div class="mes">Outubro</div>
+                    </div>
+                    <div class="card-body">
+                        <h4>Provas da 2ª Fase</h4>
+                        <p>Quatro dias de provas dissertativas e redação.</p>
+                    </div>
+                </div>
+
+                <div class="card-data">
+                    <div class="card-header">
+                        <div class="dia">30</div>
+                        <div class="mes">Novembro</div>
+                    </div>
+                    <div class="card-body">
+                        <h4>Resultados Finais</h4>
+                        <p>Divulgação das notas da segunda fase e classificação geral provisória.</p>
+                    </div>
+                </div>
+
+                <div class="card-data">
+                    <div class="card-header">
+                        <div class="dia">01-05</div>
+                        <div class="mes">Dezembro</div>
+                    </div>
+                    <div class="card-body">
+                        <h4>Período de Recursos</h4>
+                        <p>Prazo para os candidatos submeterem pedidos de revisão de notas.</p>
+                    </div>
+                </div>
+
+                <div class="card-data">
+                    <div class="card-header">
+                        <div class="dia">20</div>
+                        <div class="mes">Dezembro</div>
+                    </div>
+                    <div class="card-body">
+                        <h4>Convocação Final</h4>
+                        <p>Lista oficial dos aprovados convocados para a Inspeção de Saúde.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <button class="btn-carrossel btn-next" onclick="moverCarrossel(1)">&#10095;</button>
+        </div>
+        </section>
+        <section class="seccao-inscricao">
+            <div class="container-inscricao">
+            
+            <div class="info-preparacao">
+                <h2>Pronto para o desafio?</h2>
+                <p>Vem T31!</p>
+            </div>
+
+            <div class="acao-inscricao">
+                <div class="caixa-alerta">
+                    <p><strong>Atenção:</strong> O prazo encerra em 15 de Julho às 23:59.</p>
+                </div>
+                    <a href="#" class="btn-principal">Iniciar Inscrição Online</a>
+                    <p class="link-secundario">Já tem conta? <a href="">Logar no Portal do Candidato</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
